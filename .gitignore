@@ -1,0 +1,27 @@
+# ---- secrets ----
+.env
+**/.env
+!.env.example
+!**/.env.example
+
+# ---- Python ----
+backend/venv/
+**/__pycache__/
+*.pyc
+
+# ---- runtime data (regenerated on every deploy, don't commit) ----
+backend/uploads/
+backend/vector_db/
+backend/charts/
+backend/reports/
+
+# ---- Node / frontend ----
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
