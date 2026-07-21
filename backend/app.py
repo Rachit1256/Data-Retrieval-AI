@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -7,6 +8,13 @@ from routers.report import router as report_router
 from routers.dashboard import router as dashboard_router
 
 app = FastAPI()
+
+# On a fresh deploy this directory doesn't exist yet (it's runtime-generated
+# and correctly excluded from git) -- StaticFiles() raises at import time if
+# the directory it's mounting isn't there, which would crash the whole app
+# before uvicorn even starts.
+os.makedirs("charts", exist_ok=True)
+
 app.mount(
     "/charts",
     StaticFiles(directory="charts"),
