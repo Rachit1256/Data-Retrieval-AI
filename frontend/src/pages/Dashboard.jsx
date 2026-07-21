@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import ChatWindow from "../components/ChatWindow";
 import InsightPanel from "../components/InsightPanel";
 
-import "../styles/dashboard.css";
+import "../styles/Dashboard.css";
 
 function Dashboard() {
 
